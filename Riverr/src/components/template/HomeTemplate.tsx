@@ -282,6 +282,7 @@ const MainBody = styled.body`
       object-fit: cover;
       position: relative;
       border-radius: 5px;
+      filter: brightness(70%);
     }
     .carousel-content {
       position: absolute;

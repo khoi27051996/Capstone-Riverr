@@ -4,5 +4,13 @@
     --primary-color: rgb(241, 12, 50);
     --secondary-color: #111;
     --account-boder: 1px solid black;
-    --account-box-shadow: -5px 0 10px 0 black
+    --account-box-shadow: -5px 0 10px 0 black;
+    --account-font-size: 13px;
+    --account-font-bold: bold;
+    --account-color-span: gray;
+    --button-bgColor: #008000da;
+    --button-padding: 3px 10px;
+    --button-radius: 5px;
+    --button-color: white;
+    --button-boder: 1px solid white
 }

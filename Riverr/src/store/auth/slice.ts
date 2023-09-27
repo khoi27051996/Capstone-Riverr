@@ -31,6 +31,7 @@ const administerUser = createSlice({
       .addCase(SignInThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.userSignUp = payload;
+        console.log(payload)
         localStorage.setItem("TOKEN", payload.token);
         state.token = payload.token;
       });

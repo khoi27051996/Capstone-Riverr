@@ -31,10 +31,56 @@ export const AccountTemplate = () => {
             </div>
           </div>
           <div className="account-contact">
-            
+            <div className="account-title">
+              <div className="title-account">
+                <h1>Description</h1>
+                <button>Edit Description</button>
+              </div>
+              <div className="title-content"></div>
+            </div>
+            <div className="account-title">
+              <div className="title-account">
+                <h1>Language</h1>
+                <button>Add Now</button>
+              </div>
+              <div className="title-content"></div>
+            </div>
+            <div className="account-title">
+              <div className="title-account">
+                <h1>Link Account</h1>
+                <button>Add Now</button>
+              </div>
+              <div className="title-content"></div>
+            </div>
+            <div className="account-title">
+              <div className="title-account">
+                <h1>Skill</h1>
+                <button>Add Now</button>
+              </div>
+              <div className="title-content"></div>
+            </div>
+            <div className="account-title">
+              <div className="title-account">
+                <h1>Education</h1>
+                <button>Add Now</button>
+              </div>
+              <div className="title-content"></div>
+            </div>
+            <div className="">
+              <div className="title-account del">
+                <h1>Cetification</h1>
+                <button>Add Now</button>
+              </div>
+              <div className="title-content"></div>
+            </div>
           </div>
         </div>
-        <div className="col-span-9">About</div>
+        <div className="col-span-9">
+          <div className="list-job">
+            <h1>It seems that you don't have any active Gigs. Get selling</h1>
+            <button>Create a New Gig</button>
+          </div>
+        </div>
       </div>
     </Account>
   );
@@ -42,7 +88,7 @@ export const AccountTemplate = () => {
 
 const Account = styled.div`
   background-color: #e8e6e6;
-  height: 100vh;
+  height: 150vh;
   .content {
     max-width: 900px;
     margin: 0 auto;
@@ -67,7 +113,7 @@ const Account = styled.div`
       display: flex;
       justify-content: space-between;
       padding: 5px 10px;
-      font-size: 13px;
+      font-size: var(--account-font-size);
 
       i {
         margin-right: 5px;
@@ -76,8 +122,62 @@ const Account = styled.div`
         color: gray;
       }
       h1 {
-        font-weight: bold;
+        font-weight: var(--account-font-bold);
       }
+    }
+  }
+  .account-contact {
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: var(--account-box-shadow);
+    font-size: var(--account-font-size);
+    .account-title {
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #d2cbcb;
+      }
+    }
+
+    .title-account {
+      display: flex;
+      justify-content: space-between;
+    }
+    h1 {
+      font-weight: var(--account-font-bold);
+    }
+    button {
+      color: #4d4df7;
+    }
+    .title-content {
+      color: var(--account-color-span);
+      font-size: var(--account-font-size);
+    }
+
+    .title-content {
+      height: 30px;
+    }
+  }
+  .list-job{
+    text-align: center;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px;
+    margin-top: 50px;
+    border: var(--account-boder);
+    font-size: var(--account-font-size);
+
+    button{
+      background-color: var(--button-bgColor);
+      color: var(--button-color);
+      border: var(--button-boder);
+      padding: var(--button-padding);
+      border-radius: var(--button-radius);
     }
   }
 `;

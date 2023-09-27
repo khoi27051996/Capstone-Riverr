@@ -71,6 +71,7 @@ export const Header = () => {
                   className="!my-[10px] !bg-red-500 !w-full !p-[5px] !rounded-[10px]"
                   onClick={() => {
                     dispatch(administerUserActions.logOut());
+                    navigate("/")
                   }}
                 >
                   Log Out
