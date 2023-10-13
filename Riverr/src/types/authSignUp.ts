@@ -1,5 +1,7 @@
-export type signUp<User> = {
-  user: User;
+
+
+export type signUp<T> = {
+  user: T;
   token: string;
 };
 

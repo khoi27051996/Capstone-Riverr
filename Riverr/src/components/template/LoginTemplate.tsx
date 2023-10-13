@@ -33,6 +33,8 @@ export const LoginTemplate = () => {
         placeholder="Email"
         type="text"
         id="email"
+        name="email"
+        // value=""
         register={register}
         error={errors?.email?.message}
       />
@@ -40,10 +42,13 @@ export const LoginTemplate = () => {
         placeholder="Password"
         type="password"
         id="password"
+        name="password"
+        // value=""
         register={register}
         error={errors?.password?.message}
-      />
 
+      />
+      
       <Button
         type="primary"
         htmlType="submit"

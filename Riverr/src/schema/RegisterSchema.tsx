@@ -15,9 +15,9 @@ export const RegisterSchema = z.object({
     .nonempty("No empty")
     .regex(/^[0-9]+$/, "Phone must be number"),
   birthday: z.string(),
-//   skill: z.string(),
-  //   role: z.string(),
-  //   certification: z.string(),
+  // gender: z.string()
+  // certification: z.string().nonempty("No Empty"),
+  // skill: z.string().nonempty("No Empty")
 });
 
 export type RegisterType = z.infer<typeof RegisterSchema>;

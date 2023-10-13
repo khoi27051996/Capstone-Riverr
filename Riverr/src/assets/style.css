@@ -12,5 +12,6 @@
     --button-padding: 3px 10px;
     --button-radius: 5px;
     --button-color: white;
-    --button-boder: 1px solid white
+    --button-boder: 1px solid white;
+    --box-shadow-card: 0 0 10px 0 black
 }

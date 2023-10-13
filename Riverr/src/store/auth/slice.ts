@@ -1,11 +1,13 @@
-import { User, signUp } from "types";
+import { User, User2, signUp, } from "types";
 import { getToken } from "utils";
 import { createSlice } from "@reduxjs/toolkit";
-import { SignInThunk } from ".";
+import { SignInThunk, getUserByTokenThunk, upDateInfoToken } from ".";
 type AdministerUser = {
   token?: string;
-  userSignUp?: signUp<User>;
+  userSignUp?: signUp<User> | signUp<User2>;
   isLoading?: boolean;
+  id?: number
+
 };
 
 const initialState: AdministerUser = {
@@ -30,10 +32,23 @@ const administerUser = createSlice({
       })
       .addCase(SignInThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.userSignUp = payload;
-        console.log(payload)
+
         localStorage.setItem("TOKEN", payload.token);
+  
         state.token = payload.token;
+        state.userSignUp = payload;
+        state.id = payload.user.id
+
+      })
+      .addCase(SignInThunk.rejected, (state) => {
+        state.isLoading = false;
+      })
+
+      .addCase(getUserByTokenThunk.fulfilled, (state, { payload }) => {
+        state.userSignUp = payload;
+      })
+      .addCase(upDateInfoToken.fulfilled, (state, { payload }) => {
+        state.userSignUp = payload;
       });
   },
 });
@@ -42,3 +57,4 @@ export const {
   reducer: administerUserReducer,
   actions: administerUserActions,
 } = administerUser;
+

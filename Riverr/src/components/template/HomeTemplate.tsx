@@ -196,49 +196,49 @@ export const HomeTemplate = () => {
         </Swiper>
       </div>
       <div className="explore">
-          <h1 className="font-bold text-[30px]">Explore the marketplace</h1>
-      <div className=" grid grid-cols-5">
-        <div className="explore_items">
-          <i className="fa-solid fa-pen"></i>
-          <p>Graphics & Design</p>
+        <h1 className="font-bold text-[30px]">Explore the marketplace</h1>
+        <div className=" grid grid-cols-5">
+          <div className="explore_items">
+            <i className="fa-solid fa-pen"></i>
+            <p>Graphics & Design</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-solid fa-computer"></i>
+            <p>Digital Marketing</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-regular fa-newspaper" />
+            <p>Writing & translation</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-solid fa-film"></i>
+            <p>Video & Animation</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-solid fa-microphone"></i>
+            <p>Music & Audio</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-solid fa-chalkboard-user"></i>
+            <p>Programming & Tech</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-regular fa-handshake"></i>
+            <p>Business</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-solid fa-mug-saucer"></i>
+            <p>Lifestyle</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-solid fa-database"></i>
+            <p>Data</p>
+          </div>
+          <div className="explore_items">
+            <i className="fa-brands fa-hire-a-helper"></i>
+            <p>Support 24/7</p>
+          </div>
         </div>
-        <div className="explore_items">
-          <i className="fa-solid fa-computer"></i>
-          <p>Digital Marketing</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-regular fa-newspaper" />
-          <p>Writing & translation</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-solid fa-film"></i>
-          <p>Video & Animation</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-solid fa-microphone"></i>
-          <p>Music & Audio</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-solid fa-chalkboard-user"></i>
-          <p>Programming & Tech</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-regular fa-handshake"></i>
-          <p>Business</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-solid fa-mug-saucer"></i>
-          <p>Lifestyle</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-solid fa-database"></i>
-          <p>Data</p>
-        </div>
-        <div className="explore_items">
-          <i className="fa-brands fa-hire-a-helper"></i>
-          <p>Support 24/7</p>
-        </div>
-      </div>
       </div>
     </MainBody>
   );
@@ -338,24 +338,24 @@ const MainBody = styled.body`
   .explore {
     max-width: 1200px;
     margin: 50px auto;
-    .explore_items{
-        text-align: center;
-        margin-top: 50px;
-        i{
-            color: #23c873d2;
-            font-size: 30px;
-            &::after{
-                content: "";
-                display: block;
-                width: 100%;
-                height: 2px;
-                margin-top: 10px;
-                background-color: gray;
-            }
+    .explore_items {
+      text-align: center;
+      margin-top: 50px;
+      i {
+        color: #23c873d2;
+        font-size: 30px;
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          margin-top: 10px;
+          background-color: gray;
         }
-        p{
-            color: gray;
-        }
+      }
+      p {
+        color: gray;
+      }
     }
   }
 `;
