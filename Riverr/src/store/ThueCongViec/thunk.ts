@@ -28,3 +28,39 @@ export const dsCvDangThueThunk = createAsyncThunk(
         }
     }
 )
+
+export const xoaCvDaThueThunk = createAsyncThunk(
+    "thueCongViec/xoaCongViecDaThue",
+    async (payload: number, { rejectWithValue }) => {
+        try {
+            const data = await thueCongViecServices.xoaCvDaThue(payload)
+            return data.data.content
+        } catch (err) {
+            return rejectWithValue(err)
+        }
+    }
+)
+
+export const getListThueCvThunk = createAsyncThunk(
+    "thueCongViec/GetList",
+    async (_, { rejectWithValue }) => {
+        try {
+            const data = await thueCongViecServices.getListThueCv()
+            return data.data.content
+        } catch (err) {
+            return rejectWithValue(err)
+        }
+    }
+)
+
+export const deleteCvTrongList = createAsyncThunk(
+    "thueCongViec/delete",
+    async (payload: number, { rejectWithValue }) => {
+        try {
+            const data = await thueCongViecServices.deleteCvTrongList(payload)
+            return data.data.content
+        } catch (err) {
+            return rejectWithValue(err)
+        }
+    }
+)

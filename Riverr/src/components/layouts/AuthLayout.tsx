@@ -1,11 +1,13 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { ROOTSTATE } from "store";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+// import { useSelector } from "react-redux";
+// import { ROOTSTATE } from "store";
 export const AuthLayout = () => {
-  const { token } = useSelector((state: ROOTSTATE) => state.administerUser);
-  if (token) {
-    return <Navigate to={"/"} />;
-  }
+  // const navigate = useNavigate()
+  // const location = useLocation()
+  // const { token } = useSelector((state: ROOTSTATE) => state.administerUser);
+  // // if (token) {
+  // //   navigate(location.state || '/', { replace: true })
+  // // }
   return (
     <div className="AuthLayout h-full">
       <div className="h-screen w-screen relative ">
@@ -16,7 +18,7 @@ export const AuthLayout = () => {
           />
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-black z-10 opacity-50 "></div>
-        <div className="absolute w-[750px] p-[30px] top-1/2 left-1/2 bg-[rgba(0,0,0,.75)] z-20 -translate-x-1/2 -translate-y-1/2 rounded-md">
+        <div className="absolute md:w-[750px] p-[30px] top-1/2 left-1/2 bg-[rgba(0,0,0,.75)] z-20 -translate-x-1/2 -translate-y-1/2 rounded-md">
           <Outlet />
         </div>
       </div>

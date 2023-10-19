@@ -1,3 +1,5 @@
+
+
 export type MenuLoaiCongViec = {
   id: number;
   tenLoaiCongViec: string;
@@ -60,10 +62,23 @@ export type DanhSachCongViec = {
   tenCongViec: string,
   danhGia: number,
   giaTien: number,
-  nguoiTao: number,
+  nguoiTao: string,
   hinhAnh: string,
   moTa: string,
   maChiTietLoaiCongViec: number,
   moTaNgan: string,
   saoCongViec: number
+}
+
+export type ThemCongViec = {
+  id: string,
+  tenCongViec: string,
+  danhGia: string,
+  giaTien: string,
+  nguoiTao: string,
+  hinhAnh: string,
+  moTa: string,
+  maChiTietLoaiCongViec: string,
+  moTaNgan: string,
+  saoCongViec: string
 }

@@ -94,7 +94,7 @@ const JobAndTypeJob = styled.div`
     .typeJob-content {
       display: flex;
       justify-content: space-around;
-      gap: 30px;
+      gap: 20px;
       .content {
         border: 1px solid white;
         box-shadow: 0 0 10px 0 black;

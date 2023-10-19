@@ -20,7 +20,7 @@ export const Input = ({
   error,
 }: InputProps) => {
   return (
-    <div>
+    <div className="mt-[10px]">
       <label htmlFor={id} className="text-white">
         {placeholder}
       </label>

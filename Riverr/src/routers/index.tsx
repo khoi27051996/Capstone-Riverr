@@ -1,6 +1,7 @@
-import { AuthLayout, MainLayout } from "components";
+import { AdminLayoud, AuthLayout, MainLayout, WelcomeAdminLayout } from "components";
+import { EditsCv } from "components/UI/EditsCv";
 import { PATH } from "constant";
-import { Account, Home, Job, JobAfterSearch, JobAndTypeJob, JobByType, Login, Register } from "pages";
+import { Account, Home, Job, JobAfterSearch, JobAndTypeJob, JobByType, Login, QLLCVDetail, QuanLyCongViec, QuanLyDichVu, QuanLyLoaiCongViec, QuanLyNguoiDung, Register, ThemQuanTriVien, UserDetail } from "pages";
 import { RouteObject } from "react-router-dom";
 
 export const router: RouteObject[] = [
@@ -51,4 +52,46 @@ export const router: RouteObject[] = [
       },
     ],
   },
+  {
+    path: PATH.admin,
+    element: <AdminLayoud />,
+    children: [
+      {
+        index: true,
+        element: <WelcomeAdminLayout />
+      },
+      {
+        path: PATH.quanLyCongViec,
+        element: <QuanLyCongViec />
+      },
+      {
+        path: PATH.quanLyDichVu,
+        element: <QuanLyDichVu />,
+      },
+      {
+        path: PATH.quanLyLoaiCongViec,
+        element: <QuanLyLoaiCongViec />
+      },
+      {
+        path: PATH.quanLyNguoiDung,
+        element: <QuanLyNguoiDung />
+      },
+      {
+        path: PATH.editsJob,
+        element: <EditsCv />
+      },
+      {
+        path: PATH.quanLyLoaiCongViecDetail,
+        element: <QLLCVDetail />
+      },
+      {
+        path: PATH.quanLyNguoiDungDetail,
+        element: <UserDetail />
+      },
+      {
+        path: PATH.quanLyNguoiDungThemQTV,
+        element: <ThemQuanTriVien />
+      }
+    ]
+  }
 ];

@@ -1,14 +1,18 @@
 import { zodResolver } from "@hookform/resolvers/zod/src/zod.js";
 import { Button, Input } from "components";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+
 import { LoginSchema, LoginType } from "schema";
 import { ROOTSTATE, SignInThunk, useAppDispatch } from "store";
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { PATH } from "constant";
+
 export const LoginTemplate = () => {
   const { isLoading } = useSelector((state: ROOTSTATE) => state.administerUser);
-  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
+
   const {
     handleSubmit,
     register,
@@ -18,13 +22,13 @@ export const LoginTemplate = () => {
     resolver: zodResolver(LoginSchema),
   });
   const onSubmit: SubmitHandler<LoginType> = (value) => {
-    console.log(value);
+
     dispatch(SignInThunk(value))
       .unwrap()
       .then(() => {
-        navigate("/");
+        window.history.back()
       })
-      .catch(() => {});
+      .catch(() => { });
   };
   return (
     <form action="" onSubmit={handleSubmit(onSubmit)}>
@@ -48,7 +52,7 @@ export const LoginTemplate = () => {
         error={errors?.password?.message}
 
       />
-      
+      <NavLink to={PATH.register} className="text-red-500 ">Bạn chưa có tài khoản ?</NavLink>
       <Button
         type="primary"
         htmlType="submit"

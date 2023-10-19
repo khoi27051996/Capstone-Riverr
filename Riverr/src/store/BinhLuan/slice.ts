@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { ThemBinhLuan, binhLuan } from "types"
-import { binhLuanTheoCongViecThunk, themBinhLuanMoiThunk } from "."
+import { binhLuanTheoCongViecThunk, deleteBinhLuanThunk, getListBinhLuanThunk, themBinhLuanMoiThunk } from "."
 
 type QuanLyBinhLuan = {
     binhLuanTheoCongViec?: binhLuan[]
     themBinhLuan?: ThemBinhLuan
+    listBinhLuan?: ThemBinhLuan[]
 }
 
 const initialState: QuanLyBinhLuan = {}
@@ -18,6 +19,10 @@ const quanLyBinhLuanSlice = createSlice({
             state.binhLuanTheoCongViec = payload
         }).addCase(themBinhLuanMoiThunk.fulfilled, (state, { payload }) => {
             state.themBinhLuan = payload
+        }).addCase(getListBinhLuanThunk.fulfilled, (state, { payload }) => {
+            state.listBinhLuan = payload
+        }).addCase(deleteBinhLuanThunk.fulfilled, (state, { payload }) => {
+            state.listBinhLuan.filter(v => v.id != payload.id)
         })
     },
 })

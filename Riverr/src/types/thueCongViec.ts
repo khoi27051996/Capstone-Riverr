@@ -1,8 +1,10 @@
+import { ReactNode } from "react"
+
 export type ThueCongViec = {
     id: number,
     maCongViec: number,
     maNguoiThue: number,
-    ngayThue: Date,
+    ngayThue: ReactNode,
     hoanThanh: boolean
 }
 

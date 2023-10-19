@@ -18,6 +18,7 @@ export const Header = () => {
   const { token, userSignUp } = useSelector(
     (state: ROOTSTATE) => state.administerUser
   );
+
   const { listCongViec } = useSelector((state: ROOTSTATE) => state.quanLyCongViec)
 
   const handleListJob = () => {
@@ -36,7 +37,10 @@ export const Header = () => {
     }
     setScroll(false);
   };
-
+  let isRole = false
+  if (userSignUp?.user?.role == "ADMIN") {
+    isRole = true
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -69,66 +73,76 @@ export const Header = () => {
           </h1>
           <div>
             <i className="fa-solid fa-magnifying-glass"></i>
-            <input className="input" type="text" placeholder="Search" value={inputValue} onChange={(e) => {
-              setInputValue(e.target.value)
-            }} onKeyDown={(v) => {
-              v.key == "Enter" && handleListJob()
+            <div className="input-header">
 
-            }} />
-            <button onClick={() => {
-              handleListJob()
-            }}>Search</button>
+              <input className="input" type="text" placeholder="Search" value={inputValue} onChange={(e) => {
+                setInputValue(e.target.value)
+              }} onKeyDown={(v) => {
+                v.key == "Enter" && handleListJob()
+
+              }} />
+              <button onClick={() => {
+                handleListJob()
+              }}>Search</button>
+            </div>
           </div>
-          <nav>
+          <nav className="heaedr-none">
             <NavLink to="">Become a Seller</NavLink>
           </nav>
-          {token ? (
-            <Popover
-              content={
-                <div>
-                  <button
-                    className="!my-[10px]"
-                    onClick={() => {
-                      navigate(PATH.users);
-                    }}
-                  >
-                    Account Information
-                  </button>
-                  <hr />
-                  <button
-                    className="!my-[10px] !bg-red-500 !w-full !p-[5px] !rounded-[10px]"
-                    onClick={() => {
-                      dispatch(administerUserActions.logOut());
-                      navigate("/");
-                    }}
-                  >
-                    Log Out
-                  </button>
+
+          <div className="logInLogOut">
+
+            {token ? (
+              <Popover
+                content={
+                  <div>
+                    <button
+                      className="!my-[10px]"
+                      onClick={() => {
+                        navigate(PATH.users);
+                      }}
+                    >
+                      Account Information
+                    </button>
+                    <hr />
+                    {isRole ? <button className="my-[10px]" onClick={() => {
+                      navigate(PATH.admin)
+                    }}>Đi tới trang Admin</button> : <p></p>}
+                    <button
+                      className="!my-[10px] !bg-red-500 !w-full !p-[5px] !rounded-[10px]"
+                      onClick={() => {
+                        dispatch(administerUserActions.logOut());
+                        // navigate("/");
+                      }}
+                    >
+                      Log Out
+                    </button>
+                  </div>
+                }
+              >
+                <div className="flex">
+                  <h1 className="font-bold tracking-[5px] cursor-pointer me-[10px]">
+                    Hello :
+                    <span className="font-bold tracking-normal">
+                      {userSignUp?.user?.name}
+                    </span>
+                  </h1>
+                  <Avatar>
+                    <i className="fa-regular fa-user"></i>
+                  </Avatar>
                 </div>
-              }
-            >
-              <div className="flex">
-                <h1 className="font-bold tracking-[5px] cursor-pointer me-[10px]">
-                  Hello :
-                  <span className="font-bold tracking-normal">
-                    {userSignUp?.user?.name}
-                  </span>
-                </h1>
-                <Avatar>
-                  <i className="fa-regular fa-user"></i>
-                </Avatar>
+              </Popover>
+            ) : (
+              <div className="flex items-center gap-[60px]">
+                <nav>
+                  <NavLink to={PATH.register}>Sign In</NavLink>
+                  <NavLink to={PATH.login} className={"Join"}>
+                    Join
+                  </NavLink>
+                </nav>
               </div>
-            </Popover>
-          ) : (
-            <div className="flex items-center gap-[60px]">
-              <nav>
-                <NavLink to={PATH.register}>Sign In</NavLink>
-                <NavLink to={PATH.login} className={"Join"}>
-                  Join
-                </NavLink>
-              </nav>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
       <div className="navbar-menu">
@@ -150,6 +164,33 @@ export const Header = () => {
             );
           })}
         </div>
+      </div>
+      <div className="sideBar-Menu">
+        <Popover
+          trigger={"click"}
+          content={
+            <div className="flex flex-col gap-[20px] text-center">
+              {menuCv?.map((items) => {
+                return (
+                  <div
+                    className="cursor-pointer"
+                    key={items.id}
+                    onClick={() => {
+                      const path = generatePath(PATH.jobAndTypeJob, {
+                        typeId: items.id,
+                      });
+                      navigate(path);
+                    }}
+                  >
+                    {items.tenLoaiCongViec}
+                  </div>
+                );
+              })}
+            </div>
+          }
+        >
+          <i className="fa-solid fa-bars"></i>
+        </Popover>
       </div>
     </Container>
   );
@@ -253,6 +294,7 @@ const Container = styled.header`
     }
   }
   .navbar-menu {
+    
     &::before {
       content: "";
       display: block;
@@ -261,4 +303,13 @@ const Container = styled.header`
       background-color: #e8e6e6;
     }
   }
+  .sideBar-Menu{
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 50%;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
 `;

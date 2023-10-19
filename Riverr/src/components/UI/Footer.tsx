@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Footer = () => {
   return (
-    <Container className="mt-[100px] flex flex-col">
+    <Container className="mt-[100px]">
       <img
         className="w-full"
         src="https://cinestar.com.vn/catalog/view/theme/default/images/line-bg.png"
@@ -11,8 +11,8 @@ export const Footer = () => {
       />
       <div className="footer-content">
         <div className="info">
-          <div className="mt-[40px] flex gap-[100px] ">
-            <div>
+          <div className="mt-[40px] grid grid-cols-12 md:gap-[50px] gap-[20px]">
+            <div className="lg:col-span-2 sm:col-span-4 col-span-5">
               <p className="font-700 text-20 font-bold">
                 <span className="text-[var(--primary-color)]">Cate</span>
                 gories
@@ -28,7 +28,7 @@ export const Footer = () => {
               <NavLink to="">LifeStyle</NavLink>
               <NavLink to="">Sitemap</NavLink>
             </div>
-            <div>
+            <div className="lg:col-span-2 sm:col-span-4 col-span-5">
               <p className="font-700 text-20 font-bold">
                 <span>About</span>
               </p>
@@ -40,7 +40,7 @@ export const Footer = () => {
               <NavLink to="">Intellectual Property Claims</NavLink>
               <NavLink to="">Investor Relations</NavLink>
             </div>
-            <div>
+            <div className="lg:col-span-2 sm:col-span-4 col-span-5">
               <p className="font-700 text-20 font-bold">
                 <span>Support</span>
               </p>
@@ -49,7 +49,7 @@ export const Footer = () => {
               <NavLink to="">Selling on Fiverr</NavLink>
               <NavLink to="">Buying on Fiverr</NavLink>
             </div>
-            <div>
+            <div className="lg:col-span-2 sm:col-span-4 col-span-5">
               <p className="font-700 text-20 font-bold">
                 <span>Communty</span>
               </p>
@@ -64,7 +64,7 @@ export const Footer = () => {
               <NavLink to="">Fiverr Elevate</NavLink>
               <p className="text-gray-300 text-[13px]">Exclusive Benefits</p>
             </div>
-            <div>
+            <div className="lg:col-span-2 sm:col-span-4 col-span-5">
               <p className="font-700 text-20 font-bold">
                 <span>More From Fiverr</span>
               </p>
@@ -91,7 +91,7 @@ export const Footer = () => {
                 Fiverr international Ltd.2021
               </p>
             </div>
-            <div className="flex gap-[30px]">
+            <div className="grid md:grid-cols-7 grid-cols-3 gap-[30px]">
               <NavLink to="https://www.twitter.com">
                 <i className="fa-brands fa-twitter"></i>
               </NavLink>
@@ -123,7 +123,7 @@ export const Footer = () => {
 
 const Container = styled.footer`
   .footer-content {
-    max-width: var(--max-width);
+    max-width: 100%;
     margin: auto;
     padding: 20px 40px;
 

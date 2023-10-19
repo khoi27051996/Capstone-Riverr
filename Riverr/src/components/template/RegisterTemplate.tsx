@@ -114,7 +114,7 @@ export const RegisterTemplate = () => {
   return (
     <form noValidate action="" onSubmit={handleSubmit}>
       <h1 className="text-red-500 font-bold text-center">SignUp</h1>
-      <div className="flex gap-[30px]">
+      <div className="md:flex gap-[30px]">
         <div className="w-full">
           <div>
             <label htmlFor="id" className="text-white">

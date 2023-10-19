@@ -34,7 +34,58 @@ export const HomeTemplate = () => {
           }}
           //   navigation={true}
           modules={[Pagination, Navigation, Autoplay]}
-          className="mySwiper"
+          className="mySwiper1"
+        >
+          <SwiperSlide>
+            <img src="/images/Carousel-1.jpg" alt="" />
+            <div className="carousel-content">
+              <p>Build your brand</p>
+              <h1 className="font-bold">Logo Design</h1>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/carousel-2.jpg" alt="" />
+            <div className="carousel-content">
+              <p>Customize your site</p>
+              <h1 className="font-bold">WordPress</h1>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/carousel-3.jpg" alt="" />
+            <div className="carousel-content">
+              <p>Share your message</p>
+              <h1 className="font-bold">Voice Over</h1>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/carousel-4.jpg" alt="" />
+            <div className="carousel-content">
+              <p>Engage your audience</p>
+              <h1 className="font-bold">Video Explainer</h1>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/carousel-5.jpg" alt="" />
+            <div className="carousel-content">
+              <p>Reach more customers</p>
+              <h1 className="font-bold">Social Media</h1>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <Swiper
+          slidesPerView={2}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          //   loop={true}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          //   navigation={true}
+          modules={[Pagination, Navigation, Autoplay]}
+          className="mySwiper2"
         >
           <SwiperSlide>
             <img src="/images/Carousel-1.jpg" alt="" />
@@ -74,8 +125,8 @@ export const HomeTemplate = () => {
         </Swiper>
       </div>
       <div className="content-bg-color">
-        <div className="content">
-          <div className="content_text">
+        <div className="content grid grid-cols-12">
+          <div className="content_text md:col-span-6  col-span-12">
             <h1>A whole world of freelance talent at your fingertips</h1>
             <div>
               <h2>
@@ -118,9 +169,9 @@ export const HomeTemplate = () => {
               </p>
             </div>
           </div>
-          <div className="content_video">
+          <div className="content_video md:col-span-6 col-span-12">
             <iframe
-              width="560"
+              width="100%%"
               height="315"
               src="https://www.youtube.com/embed/cWOcyo4wTUk?si=WKqWEV0BpdSrPtf4"
               title="YouTube video player"
@@ -144,17 +195,17 @@ export const HomeTemplate = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="flex gap-5 justify-items-center align-middle">
-              <div>
+            <div className="grid grid-cols-12 gap-5 justify-items-center align-middle">
+              <div className="md:col-span-6  col-span-12">
                 <iframe
-                  width="560"
+                  width="100%"
                   height="315"
                   src="https://www.youtube.com/embed/CxMwlm2gRa8?si=FIqXzXoeMlVNreTF"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 ></iframe>
               </div>
-              <div>
+              <div className="md:col-span-6  col-span-12 px-[20px]">
                 <p>
                   Kay Kim, Co-Founded |{" "}
                   <span className="font-bold">rooted</span>
@@ -169,17 +220,17 @@ export const HomeTemplate = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex gap-5 justify-items-center align-middle">
-              <div>
+            <div className="grid grid-cols-12 gap-5 justify-items-center align-middle">
+              <div className="md:col-span-6  col-span-12">
                 <iframe
-                  width="560"
+                  width="100%"
                   height="315"
                   src="https://www.youtube.com/embed/YffZGDI29sg?si=37o9RCBElDCBWRJf"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 ></iframe>
               </div>
-              <div>
+              <div className="md:col-span-6  col-span-12 px-[20px]">
                 <p>
                   Kay Kim, Co-Founded |{" "}
                   <span className="font-bold">rooted</span>
@@ -197,7 +248,7 @@ export const HomeTemplate = () => {
       </div>
       <div className="explore">
         <h1 className="font-bold text-[30px]">Explore the marketplace</h1>
-        <div className=" grid grid-cols-5">
+        <div className=" grid md:grid-cols-5 grid-cols-2">
           <div className="explore_items">
             <i className="fa-solid fa-pen"></i>
             <p>Graphics & Design</p>
@@ -245,6 +296,9 @@ export const HomeTemplate = () => {
 };
 
 const MainBody = styled.body`
+.mySwiper2{
+  display: none;
+}
   .Img-header {
     background-image: url("/images/Fiverr-Gig-Ideas.jpg");
     height: 50vh;
@@ -258,7 +312,7 @@ const MainBody = styled.body`
     color: #8c8989;
     .tabs_content {
       height: var(--header-height);
-      max-width: 750px;
+   
       margin: 0 auto;
     }
     .mySwiper {
@@ -268,7 +322,6 @@ const MainBody = styled.body`
   }
   .carousel {
     cursor: pointer;
-    max-width: 1200px;
     margin: 0 auto;
     h1 {
       font-weight: bold;
@@ -304,15 +357,13 @@ const MainBody = styled.body`
     background-color: #64c59358;
   }
   .content {
-    max-width: 1200px;
-    margin: 50px auto;
-    display: flex;
-    justify-content: space-around;
-    gap: 50px;
-    padding: 60px 0;
+
+    margin: 50px 0;
+
+    padding: 60px 20px;
 
     .content_text {
-      max-width: 500px;
+     
       h1 {
         font-weight: bold;
         font-size: 30px;
@@ -330,13 +381,13 @@ const MainBody = styled.body`
     }
     .content_video {
       margin-top: 50px;
-      box-shadow: 0 0 15px 5px black;
+     
       height: 100%;
     }
   }
 
   .explore {
-    max-width: 1200px;
+ 
     margin: 50px auto;
     .explore_items {
       text-align: center;

@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export type binhLuan = {
     id: number,
     ngayBinhLuan: string,
@@ -11,7 +13,7 @@ export type ThemBinhLuan = {
     id: number,
     maCongViec: number,
     maNguoiBinhLuan: number,
-    ngayBinhLuan: Date,
+    ngayBinhLuan: ReactNode,
     noiDung: string,
     saoBinhLuan: number
 }

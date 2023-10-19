@@ -5,4 +5,11 @@ export * from "./Account";
 export * from "./Job";
 export * from "./JobAndTypeJob";
 export * from './JobByType';
-export * from './JobAfterSearch'
+export * from './JobAfterSearch';
+export * from './QuanLyCongViec';
+export * from './QuanLyDichVu';
+export * from './QuanLyLoaiCongViec';
+export * from './QuanLyNguoiDung';
+export * from './QLLCVDetail';
+export * from './UserDetail';
+export * from './ThemQuanTriVien'

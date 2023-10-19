@@ -47,9 +47,9 @@ export const JobTemplate = () => {
 
   return (
     <DetailJob>
-      <div className="grid grid-cols-12 gap-[50px]">
+      <div className="grid grid-cols-12 md:gap-[50px]">
 
-        <div className="detail col-span-8">
+        <div className="detail md:col-span-8 col-span-12">
           {chiTietCongViec?.map(v => {
             return <div>
               <div className="thongTinLoaiCv">
@@ -65,7 +65,7 @@ export const JobTemplate = () => {
               </div>
               <div className="detail-job">
                 <h1>{v?.congViec?.tenCongViec}</h1>
-                <div className="nguoiTaoCv">
+                <div className="nguoiTaoCv sm:text-[16px] text-[10px]">
                   <img src={v?.avatar} alt="..." />
                   <p>{v?.tenNguoiTao}</p>
                   <p className="color-gray">|</p>
@@ -142,7 +142,7 @@ export const JobTemplate = () => {
           <div className="add-Comment">
             <h1></h1>
             <textarea
-              className="form-control text-black"
+              className="form-control text-black md:w-[380px] w-[250px]"
               id="textAreaExample"
               value={noiDung}
               onChange={handleText}
@@ -163,7 +163,7 @@ export const JobTemplate = () => {
           }}>Add Comment</button>
         </div>
 
-        <div className="thueCv col-span-4">
+        <div className="thueCv md:col-span-4 col-span-12">
           <h1 className="font-bold text-[20px]">Thuê công việc</h1>
           {chiTietCongViec?.map(v => {
 
@@ -289,6 +289,7 @@ const DetailJob = styled.div`
     }
   }
   .detail-job {
+    width: 100%;
     margin-top: 20px;
     h1 {
       font-size: 20px;
@@ -305,12 +306,12 @@ const DetailJob = styled.div`
       }
       p {
         font-weight: bold;
-        margin: 0 20px;
+        padding: 0 10px;
       }
       .star {
         display: flex;
         color: orange;
-        margin: 0 20px;
+      
       }
       .color-gray {
         color: gray;
@@ -394,7 +395,7 @@ const DetailJob = styled.div`
   }
   .faq-layout{
     text-align: center;
-    width: 750px;
+   
     margin: 0 auto;
     button{
       border: none;

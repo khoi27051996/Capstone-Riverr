@@ -17,7 +17,7 @@ export const JobByTypeTemplate = () => {
   }, [dispatch, id]);
   return (
     <JobByTypeComponet>
-      <div className="flex gap-[30px] ">
+      <div className="flex gap-[30px] jobByTime-content ">
         {congViecTheoLoai?.map((v) => {
           return (
             <div

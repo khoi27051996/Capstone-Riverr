@@ -4,7 +4,7 @@ import { Avatar, Button, Input } from "components";
 import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AccountInfo, AccountType } from "schema";
-import { ROOTSTATE, dsCvDangThueThunk, upDateInfoToken, useAppDispatch } from "store";
+import { ROOTSTATE, dsCvDangThueThunk, upDateInfoToken, useAppDispatch, xoaCvDaThueThunk } from "store";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import { User2 } from "types";
@@ -78,6 +78,7 @@ export const AccountTemplate = () => {
       <div className="grid grid-cols-12 gap-4 content">
         <div className="col-span-3">
           <div className="informartion">
+
             <Avatar>
               <i className="fa-regular fa-user"></i> Update
             </Avatar>
@@ -220,7 +221,9 @@ export const AccountTemplate = () => {
                       })
                       navigate(path)
                     }}>View Detail</button>
-                    <button>X</button>
+                    <button onClick={() => {
+                      dispatch(xoaCvDaThueThunk(v.id))
+                    }}>X</button>
                   </div>
                 </div>
               </div>
@@ -285,7 +288,7 @@ export const AccountTemplate = () => {
 
 const Account = styled.div`
   background-color: #e8e6e6;
-  height: 150vh;
+  height: 100%;
   .content {
     max-width: 900px;
     margin: 0 auto;

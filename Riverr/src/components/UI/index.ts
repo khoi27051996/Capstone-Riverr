@@ -8,4 +8,6 @@ export * from './Avatar';
 export * from './Card';
 
 export * from './Dropdown';
-export * from './Tabs'
+export * from './Tabs';
+export * from './ModelThemCongViec';
+

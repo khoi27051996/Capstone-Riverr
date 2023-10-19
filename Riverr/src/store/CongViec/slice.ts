@@ -4,7 +4,12 @@ import {
   chiTietCongViecThunk,
   danhSachCongViecThunk,
   getCongViecTheoLoaiThunk,
+  getCvByIdThunk,
   getMenuCvThunk,
+  themCongViecThunk,
+  updateCongViecThunk,
+  xoaCongViecTrongDsThunk,
+
 } from ".";
 
 type QuanLyCongViec = {
@@ -12,7 +17,10 @@ type QuanLyCongViec = {
   congViecTheoLoai?: CongViecTheoLoai[];
   chiTietCongViec?: ChiTietCongViec[]
   listCongViec?: DanhSachCongViec[]
-  listAfterSearch?: DanhSachCongViec[]
+  listAfterSearch?: DanhSachCongViec[],
+  congViecMoi?: DanhSachCongViec,
+
+  congViecTheoId?: DanhSachCongViec
 };
 
 const initialState: QuanLyCongViec = {};
@@ -23,7 +31,6 @@ const quanLyCongViecSlice = createSlice({
   reducers: {
     getListAfterSearch: (state, { payload }) => {
       state.listAfterSearch = payload
-      console.log(state.listAfterSearch)
     }
   },
   extraReducers(builder) {
@@ -38,6 +45,12 @@ const quanLyCongViecSlice = createSlice({
         state.chiTietCongViec = payload;
       }).addCase(danhSachCongViecThunk.fulfilled, (state, { payload }) => {
         state.listCongViec = payload
+      }).addCase(themCongViecThunk.fulfilled, (state, { payload }) => {
+        state.listCongViec.push(payload)
+      }).addCase(updateCongViecThunk.fulfilled, (state, { payload }) => {
+        state.congViecTheoId = payload
+      }).addCase(getCvByIdThunk.fulfilled, (state, { payload }) => {
+        state.congViecTheoId = payload
       })
   },
 });
