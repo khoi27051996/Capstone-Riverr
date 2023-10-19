@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { ChiTietLoaiCongViec } from "types"
-import { deleteCTLCVThunk, getListCTLCV, postCTLCVThunk } from "."
+import {  getListCTLCV, postCTLCVThunk } from "."
 
 type QuanLyChiTietLoaiCongViec = {
     listCTLCV?: ChiTietLoaiCongViec[]

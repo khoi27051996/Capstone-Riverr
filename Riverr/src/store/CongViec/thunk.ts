@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { CongViecType } from "schema/CongViecSchema";
 import { quanLyCongViec } from "services";
-import { DanhSachCongViec, ThemCongViec } from "types";
+import { DanhSachCongViec} from "types";
 
 export const getMenuCvThunk = createAsyncThunk(
   "quanLyMenuCv/getMenu",

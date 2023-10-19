@@ -1,6 +1,15 @@
 import { ReactNode } from "react"
 
+
 export type ThueCongViec = {
+    id: number,
+    maCongViec: number,
+    maNguoiThue: number,
+    ngayThue: Date,
+    hoanThanh: boolean
+}
+
+export type ThueCongViec2 = {
     id: number,
     maCongViec: number,
     maNguoiThue: number,

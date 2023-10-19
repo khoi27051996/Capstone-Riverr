@@ -3,7 +3,7 @@ import { LoginType } from "schema";
 import { administerUser, updateUser } from "services";
 import { getToken, handleErr, sleep } from "utils";
 import { toast } from "react-toastify";
-import { User2, signUp } from "types";
+import { User2 } from "types";
 export const SignInThunk = createAsyncThunk(
   "administerSignIn",
   async (payload: LoginType, { rejectWithValue }) => {

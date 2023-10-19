@@ -20,7 +20,8 @@ export const ModelThemCongViec = () => {
   const noneModel = () => {
     let modal = document.getElementById("addCv")
     modal.style.display = "none"
-    document.getElementById("form").reset()
+    let form: any = document.getElementById("form")
+    form.reset()
   }
   const [number, setNumber] = useState(0)
   const onSubmit: SubmitHandler<CongViecType> = async (value) => {
@@ -51,16 +52,16 @@ export const ModelThemCongViec = () => {
           action=""
           onSubmit={handleSubmit(onSubmit)}
         >
-          <Input id="id" placeholder="ID" register={register} type="text" error={errors?.id?.message} />
-          <Input id="tenCongViec" placeholder="Tên Công Việc" type="text" register={register} error={errors?.tenCongViec?.message} />
-          <Input id="danhGia" placeholder="Đánh Giá" type="text" register={register} error={errors?.danhGia?.message} />
-          <Input id="giaTien" placeholder="Giá tiền" type="text" register={register} error={errors?.giaTien?.message} />
-          <Input id="nguoiTao" placeholder="Người Tạo" type="text" register={register} error={errors?.nguoiTao?.message} />
-          <Input id="hinhAnh" placeholder="Hình ảnh" type="text" register={register} error={errors?.hinhAnh?.message} />
-          <Input id="moTa" placeholder="Mô Tả" type="text" register={register} error={errors?.moTa?.message} />
-          <Input id="maChiTietLoaiCongViec" placeholder="Mã chi tiết loại Cv" type="text" register={register} error={errors?.maChiTietLoaiCongViec?.message} />
-          <Input id="moTaNgan" placeholder="Mô tả ngắn" type="text" register={register} error={errors?.moTaNgan?.message} />
-          <Input id="saoCongViec" placeholder="Sao Công Việc" type="text" register={register} error={errors?.saoCongViec?.message} />
+          <Input name="" id="id" placeholder="ID" register={register} type="text" error={errors?.id?.message} />
+          <Input name="" id="tenCongViec" placeholder="Tên Công Việc" type="text" register={register} error={errors?.tenCongViec?.message} />
+          <Input name="" id="danhGia" placeholder="Đánh Giá" type="text" register={register} error={errors?.danhGia?.message} />
+          <Input name="" id="giaTien" placeholder="Giá tiền" type="text" register={register} error={errors?.giaTien?.message} />
+          <Input name="" id="nguoiTao" placeholder="Người Tạo" type="text" register={register} error={errors?.nguoiTao?.message} />
+          <Input name="" id="hinhAnh" placeholder="Hình ảnh" type="text" register={register} error={errors?.hinhAnh?.message} />
+          <Input name="" id="moTa" placeholder="Mô Tả" type="text" register={register} error={errors?.moTa?.message} />
+          <Input name="" id="maChiTietLoaiCongViec" placeholder="Mã chi tiết loại Cv" type="text" register={register} error={errors?.maChiTietLoaiCongViec?.message} />
+          <Input name="" id="moTaNgan" placeholder="Mô tả ngắn" type="text" register={register} error={errors?.moTaNgan?.message} />
+          <Input name="" id="saoCongViec" placeholder="Sao Công Việc" type="text" register={register} error={errors?.saoCongViec?.message} />
 
 
 

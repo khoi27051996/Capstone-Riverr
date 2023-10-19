@@ -1,6 +1,6 @@
 import { apiInstace } from "constant";
 import { CongViecType } from "schema/CongViecSchema";
-import { ChiTietCongViec, CongViecTheoLoai, DanhSachCongViec, MenuLoaiCongViec, ThemCongViec } from "types";
+import { ChiTietCongViec, CongViecTheoLoai, DanhSachCongViec, MenuLoaiCongViec } from "types";
 
 const api = apiInstace({
   baseURL: import.meta.env.VITE_CONGVIEC_API,

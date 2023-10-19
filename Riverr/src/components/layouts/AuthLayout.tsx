@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 // import { useSelector } from "react-redux";
 // import { ROOTSTATE } from "store";
 export const AuthLayout = () => {

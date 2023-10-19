@@ -35,10 +35,10 @@ export const ThemQuanTriVien = () => {
         <ThemQTV>
             <form action="" onSubmit={handleSubmit(onSubmit)} >
                 <h1 className='text-center font-bold text-[30px]'>Thêm Quản Trị Viên</h1>
-                <Input id='email' placeholder='Email' type='text' register={register} error={errors?.email?.message} />
-                <Input id='name' placeholder='Tên QTV' type='text' register={register} error={errors?.name?.message} />
-                <Input id='phone' placeholder='Số điện thoại' type='text' register={register} error={errors?.phone?.message} />
-                <Input id='password' placeholder='Mật khẩu' type='password' register={register} error={errors?.password?.message} />
+                <Input name='' id='email' placeholder='Email' type='text' register={register} error={errors?.email?.message} />
+                <Input name='' id='name' placeholder='Tên QTV' type='text' register={register} error={errors?.name?.message} />
+                <Input name='' id='phone' placeholder='Số điện thoại' type='text' register={register} error={errors?.phone?.message} />
+                <Input name='' id='password' placeholder='Mật khẩu' type='password' register={register} error={errors?.password?.message} />
 
                 <Button htmlType='submit' type='primary' className='!w-full !h-[50px] !font-bold !mt-[20px]'>Thêm mới</Button>
             </form>

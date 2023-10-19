@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { ROOTSTATE, useAppDispatch } from 'store'
 import { styled } from 'styled-components'
 import { useEffect } from 'react'
-import { deleteNguoiDungThunk, getListNguoiDung, updateNguoiDungThunk } from 'store/NguoiDung'
+import { getListNguoiDung, updateNguoiDungThunk } from 'store/NguoiDung'
 import { Button, Input } from 'components'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { updateNguoiDungAdminSchema, updateNguoiDungAdminType } from 'schema'
@@ -49,12 +49,12 @@ export const UserDetail = () => {
             <form action="" onSubmit={handleSubmit(onSubmit)}>
                 <div className='form'>
                     <div>
-                        <Input id='name' placeholder='Tên người dùng' type='text' register={register} error={errors?.name?.message} />
-                        <Input id='phone' placeholder='Số điện thoại' type='text' register={register} error={errors?.phone?.message} />
-                        <Input id='email' placeholder='Email' type='text' register={register} error={errors?.email?.message} />
+                        <Input name='' id='name' placeholder='Tên người dùng' type='text' register={register} error={errors?.name?.message} />
+                        <Input name='' id='phone' placeholder='Số điện thoại' type='text' register={register} error={errors?.phone?.message} />
+                        <Input name='' id='email' placeholder='Email' type='text' register={register} error={errors?.email?.message} />
                     </div>
                     <div>
-                        <Input id='role' placeholder='Vai trò' type='text' register={register} error={errors?.role?.message} />
+                        <Input name='' id='role' placeholder='Vai trò' type='text' register={register} error={errors?.role?.message} />
                         <h1>Skill</h1>
                         <p>{userDetail?.skill?.map((v, index) => {
                             return <p key={index} className='flex gap-[10px]'>{v}</p>

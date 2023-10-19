@@ -3,8 +3,8 @@ import { PATH } from "constant"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { generatePath, useNavigate } from "react-router-dom"
-import { binhLuanServices, quanLyCongViec } from "services"
-import { ROOTSTATE, danhSachCongViecThunk, getCvByIdThunk, useAppDispatch, xoaCongViecTrongDsThunk } from "store"
+import { quanLyCongViec } from "services"
+import { ROOTSTATE, danhSachCongViecThunk, getCvByIdThunk, useAppDispatch } from "store"
 import { styled } from 'styled-components'
 
 export const QuanLyCongViecTemplate = () => {
@@ -96,6 +96,7 @@ export const QuanLyCongViecTemplate = () => {
                                         <button className="button3" onClick={async () => {
                                             try {
                                                 await quanLyCongViec.xoaCvTrongDs(v.id)
+                                                setNumber(8)
                                                 setTableCv(listCongViec)
                                             } catch (err) {
                                                 console.log(err)

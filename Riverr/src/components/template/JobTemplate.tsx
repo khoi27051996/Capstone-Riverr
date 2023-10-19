@@ -11,7 +11,7 @@ export const JobTemplate = () => {
   const params = useParams();
   const dispatch = useAppDispatch();
   const id: number = parseInt(params.idDetailJob, 10);
-  const { congViecTheoLoai, chiTietCongViec } = useSelector(
+  const { chiTietCongViec } = useSelector(
     (state: ROOTSTATE) => state.quanLyCongViec
   );
 
@@ -27,7 +27,7 @@ export const JobTemplate = () => {
   const handleText = (e) => {
     setNoiDung(e.target.value)
   }
-  const [userCmt, setUserCmt] = useState<ThemBinhLuan>({
+  const userCmt: ThemBinhLuan = ({
     id: 0,
     maCongViec: 0,
     maNguoiBinhLuan: 0,
@@ -36,6 +36,7 @@ export const JobTemplate = () => {
     saoBinhLuan: 0
   })
   const handleUserCmt = () => {
+
     userCmt.maCongViec = id
     userCmt.maNguoiBinhLuan = userSignUp?.user?.id
     userCmt.noiDung = noiDung
@@ -43,6 +44,7 @@ export const JobTemplate = () => {
   useEffect(() => {
     dispatch(chiTietCongViecThunk(id));
     dispatch(binhLuanTheoCongViecThunk(id))
+
   }, [dispatch, id, userCmt.noiDung]);
 
   return (
@@ -155,6 +157,7 @@ export const JobTemplate = () => {
             handleUserCmt()
             if (token) {
               dispatch(themBinhLuanMoiThunk(userCmt))
+
               setNoiDung("")
             } else {
               navigate(PATH.login)

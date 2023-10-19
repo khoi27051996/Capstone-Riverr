@@ -1,4 +1,4 @@
-import ReactPaginate from "react-paginate"
+
 import { useSelector } from "react-redux"
 import { ROOTSTATE, useAppDispatch } from "store"
 import styled from "styled-components"

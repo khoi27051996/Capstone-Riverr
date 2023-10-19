@@ -40,13 +40,13 @@ export const EditsCv = () => {
             <form action="" onSubmit={handleSubmit(onSubmit)} className="mt-[50px]">
                 <h1 className="font-bold text-center text-[30px]">Chỉnh sửa công việc</h1>
 
-                <Input id="tenCongViec" placeholder="Tên Công Việc" type="text" register={register} error={errors?.tenCongViec?.message} />
-                <Input id="danhGia" placeholder="Đánh Giá" type="text" register={register} error={errors?.danhGia?.message} />
-                <Input id="giaTien" placeholder="Giá Tiền" type="text" register={register} error={errors?.giaTien?.message} />
-                <Input id="hinhAnh" placeholder="Hình Ảnh" type="text" register={register} error={errors?.hinhAnh?.message} />
-                <Input id="moTa" placeholder="Mô tả" type="text" register={register} error={errors?.moTa?.message} />
-                <Input id="maChiTietLoaiCongViec" placeholder="Mã Chi tiết" type="text" register={register} error={errors?.maChiTietLoaiCongViec?.message} />
-                <Input id="moTaNgan" placeholder="Mô Tả Ngắn" type="text" register={register} error={errors?.moTaNgan?.message} />
+                <Input id="tenCongViec" placeholder="Tên Công Việc" type="text" register={register} error={errors?.tenCongViec?.message} name="" />
+                <Input id="danhGia" name="" placeholder="Đánh Giá" type="text" register={register} error={errors?.danhGia?.message} />
+                <Input id="giaTien" name="" placeholder="Giá Tiền" type="text" register={register} error={errors?.giaTien?.message} />
+                <Input id="hinhAnh" name="" placeholder="Hình Ảnh" type="text" register={register} error={errors?.hinhAnh?.message} />
+                <Input id="moTa" name="" placeholder="Mô tả" type="text" register={register} error={errors?.moTa?.message} />
+                <Input id="maChiTietLoaiCongViec" placeholder="Mã Chi tiết" name="" type="text" register={register} error={errors?.maChiTietLoaiCongViec?.message} />
+                <Input id="moTaNgan" name="" placeholder="Mô Tả Ngắn" type="text" register={register} error={errors?.moTaNgan?.message} />
 
 
                 <Button type="primary"

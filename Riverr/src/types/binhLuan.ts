@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react'
 
 export type binhLuan = {
     id: number,
@@ -10,6 +10,15 @@ export type binhLuan = {
 }
 
 export type ThemBinhLuan = {
+    id: number,
+    maCongViec: number,
+    maNguoiBinhLuan: number,
+    ngayBinhLuan: Date,
+    noiDung: string,
+    saoBinhLuan: number
+}
+
+export type ThemBinhLuan2 = {
     id: number,
     maCongViec: number,
     maNguoiBinhLuan: number,
