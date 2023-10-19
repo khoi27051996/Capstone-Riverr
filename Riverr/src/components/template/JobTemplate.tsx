@@ -45,7 +45,7 @@ export const JobTemplate = () => {
     dispatch(chiTietCongViecThunk(id));
     dispatch(binhLuanTheoCongViecThunk(id))
 
-  }, [dispatch, id, userCmt.noiDung]);
+  }, [dispatch,  noiDung]);
 
   return (
     <DetailJob>

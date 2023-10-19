@@ -2,18 +2,24 @@
 import { Button } from "components";
 import { PATH } from "constant";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 // import { useForm, SubmitHandler } from "react-hook-form";
 
 import { toast } from "react-toastify";
 // import { RegisterSchema, RegisterType } from "schema";
 import { administerUser } from "services";
+import { ROOTSTATE } from "store";
 
 import { User, UserErr } from "types";
 import { handleErr, sleep } from "utils";
 
 export const RegisterTemplate = () => {
+  const { token } = useSelector((state: ROOTSTATE) => state.administerUser)
+  if (token) {
+    return <Navigate to={"/"} />
+  }
   const [inputValue, setInputValue] = useState<string>();
   const [arraySkill, setArrraySkil] = useState<string[]>([]);
   const handleArraySkill = () => {
